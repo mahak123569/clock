@@ -6,4 +6,4 @@ A real-time digital clock built using HTML, CSS, and JavaScript that dynamically
 
 Uses JavaScript Date object for live time updates
 
-Simple and responsive UI design
+Simple and responsive UI design .
