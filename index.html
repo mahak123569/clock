@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clock</title>
+    <title>Aurora Clock</title>
     <link rel="stylesheet" href="Clock.css"/>
 </head>
 <body>
-    <div class="container">
-        <div class="clock">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
 
-           <div style="--clr:#ff3d58;" class="hand"><i></i></div>
-           <div style="--clr: darkcyan;" class="hand"><i></i></div>
-           <div style="--clr:black;" class="hand"><i></i></div>
+    <main class="container">
+        <h1>Aurora Clock</h1>
+        <div class="clock" role="img" aria-label="Live analog clock">
+            <div style="--clr:var(--accent);--h:70px" class="hand hand-hour"><i></i></div>
+            <div style="--clr:var(--ink);--h:108px" class="hand hand-minute"><i></i></div>
+            <div style="--clr:var(--hot);--h:128px" class="hand hand-second"><i></i></div>
 
             <span style="--i:1;"><b>I</b></span>
             <span style="--i:2;"><b>II</b></span>
@@ -24,12 +27,14 @@
             <span style="--i:8;"><b>VIII</b></span>
             <span style="--i:9;"><b>IX</b></span>
             <span style="--i:10;"><b>X</b></span>
-            <span style="--i:11;"><b>XXI</b></span>
-            <span style="--i:12;"><b>XXII</b></span>
-           
-            
+            <span style="--i:11;"><b>XI</b></span>
+            <span style="--i:12;"><b>XII</b></span>
         </div>
-    </div>
+        <section class="meta" aria-live="polite">
+            <p class="digital" data-digital-time>--:--:--</p>
+            <p class="date" data-digital-date>Loading date...</p>
+        </section>
+    </main>
     <script src="clock.js"></script>
 </body>
 </html>

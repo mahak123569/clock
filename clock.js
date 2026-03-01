@@ -1,32 +1,42 @@
 const clock = document.querySelector(".clock");
-const hands = clock?.querySelectorAll(".hand");
+const hourHand = clock?.querySelector(".hand-hour");
+const minuteHand = clock?.querySelector(".hand-minute");
+const secondHand = clock?.querySelector(".hand-second");
+const digitalTime = document.querySelector("[data-digital-time]");
+const digitalDate = document.querySelector("[data-digital-date]");
 
-if (clock && hands?.length === 3) {
-  const [hourHand, minuteHand, secondHand] = hands;
+if (clock && hourHand && minuteHand && secondHand) {
+  const timeFormatter = new Intl.DateTimeFormat([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  });
 
-  hourHand.style.setProperty("--h", "90px");
-  minuteHand.style.setProperty("--h", "120px");
-  secondHand.style.setProperty("--h", "145px");
+  const dateFormatter = new Intl.DateTimeFormat([], {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
 
-  hourHand.querySelector("i").style.height = "90px";
-  minuteHand.querySelector("i").style.height = "120px";
-  secondHand.querySelector("i").style.height = "145px";
-
-  function updateClock() {
+  function renderClock() {
     const now = new Date();
     const seconds = now.getSeconds() + now.getMilliseconds() / 1000;
     const minutes = now.getMinutes() + seconds / 60;
     const hours = (now.getHours() % 12) + minutes / 60;
 
-    const secDeg = seconds * 6;
-    const minDeg = minutes * 6;
-    const hourDeg = hours * 30;
+    secondHand.style.transform = `rotate(${seconds * 6}deg)`;
+    minuteHand.style.transform = `rotate(${minutes * 6}deg)`;
+    hourHand.style.transform = `rotate(${hours * 30}deg)`;
 
-    secondHand.style.transform = `rotate(${secDeg}deg)`;
-    minuteHand.style.transform = `rotate(${minDeg}deg)`;
-    hourHand.style.transform = `rotate(${hourDeg}deg)`;
+    if (digitalTime && digitalDate) {
+      digitalTime.textContent = timeFormatter.format(now);
+      digitalDate.textContent = dateFormatter.format(now);
+    }
+
+    requestAnimationFrame(renderClock);
   }
 
-  updateClock();
-  setInterval(updateClock, 1000);
+  renderClock();
 }
