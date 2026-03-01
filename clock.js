@@ -20,6 +20,9 @@ if (clock && hourHand && minuteHand && secondHand) {
     year: "numeric"
   });
 
+  let lastSecond = -1;
+  let lastDateKey = "";
+
   function renderClock() {
     const now = new Date();
     const seconds = now.getSeconds() + now.getMilliseconds() / 1000;
@@ -30,8 +33,21 @@ if (clock && hourHand && minuteHand && secondHand) {
     minuteHand.style.transform = `rotate(${minutes * 6}deg)`;
     hourHand.style.transform = `rotate(${hours * 30}deg)`;
 
-    if (digitalTime && digitalDate) {
+    const wholeSecond = now.getSeconds();
+    if (digitalTime && wholeSecond !== lastSecond) {
       digitalTime.textContent = timeFormatter.format(now);
+      lastSecond = wholeSecond;
+    }
+
+    if (digitalDate) {
+      const dateKey = `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`;
+      if (dateKey !== lastDateKey) {
+        digitalDate.textContent = dateFormatter.format(now);
+        lastDateKey = dateKey;
+      }
+    }
+
+    if (digitalDate && !digitalDate.textContent.trim()) {
       digitalDate.textContent = dateFormatter.format(now);
     }
 
