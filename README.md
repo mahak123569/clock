@@ -29,7 +29,7 @@ Perfect for beginners learning DOM manipulation, timing functions, and basic sty
 | CSS        |
 | JavaScript |
 
----
+
 
 ## 📁 Project Structure
 
@@ -40,7 +40,7 @@ clock/
 └── script.js
 ```
 
----
+
 
 ## 💡 Installation
 
