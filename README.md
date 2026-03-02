@@ -19,7 +19,6 @@ Perfect for beginners learning DOM manipulation, timing functions, and basic sty
 ✔ Clean and simple UI
 ✔ Works in modern browsers
 
----
 
 ## 🛠️ Technologies Used
 
@@ -74,5 +73,5 @@ Contributions, issues, and feature requests are welcome!
 
 This project is **open source** and available under the MIT License.
 
----
+
 
