@@ -11,7 +11,7 @@ This is a minimal **clock application** that shows the current time in real-time
 
 Perfect for beginners learning DOM manipulation, timing functions, and basic styling.
 
----
+
 
 ## 🚀 Features
 
@@ -33,12 +33,11 @@ Perfect for beginners learning DOM manipulation, timing functions, and basic sty
 
 ## 📁 Project Structure
 
-```
+
 clock/
 ├── index.html
 ├── style.css
 └── script.js
-```
 
 
 
