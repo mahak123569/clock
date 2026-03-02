@@ -1,14 +1,9 @@
-
----
-
 # 🕒 Clock
 
 A simple digital clock built with JavaScript, HTML, and CSS.
 
 View the project on GitHub:
 🔗 [https://github.com/mahak123569/clock](https://github.com/mahak123569/clock)
-
----
 
 ## 📌 About
 
