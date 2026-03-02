@@ -1,4 +1,3 @@
-Here’s a **README.md** you can use for your GitHub project at **[https://github.com/mahak123569/clock](https://github.com/mahak123569/clock)** and I’ve included your repo link as requested.
 
 ---
 
