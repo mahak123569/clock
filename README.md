@@ -51,13 +51,12 @@ clock/
 2. Open `index.html` in your browser
 3. Enjoy your clock! ⏰
 
----
 
 ## 📝 Usage
 
 No setup required — just open the file in your browser or host it live via GitHub Pages.
 
----
+
 
 ## 📌 Contributing
 
@@ -69,7 +68,7 @@ Contributions, issues, and feature requests are welcome!
 4. Push to the branch
 5. Open a Pull Request 😊
 
----
+
 
 ## 📜 License
 
